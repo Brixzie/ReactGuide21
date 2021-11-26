@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, math } from 'react'
 
 //API
 import API from '../API'
@@ -26,9 +26,12 @@ const Home = () => {
             setLoading(true);
 
             const movies = await API.fetchMovies(searchTerm, page);
+            //Print response of the api
             //console.log(movies);
+            //console.log(math.Count(...movies));
 
             //returns an object
+            //Understand this one
             setState(prev => ({
                 ...movies,
                 results:
@@ -46,7 +49,7 @@ const Home = () => {
         fetchMovies(1)
     }, [])
 
-    console.log(state);
+    //console.log(state);
 
     return <div>Home Page</div>
 }
